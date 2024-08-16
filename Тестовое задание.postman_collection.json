@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "b8c5697f-2194-47f9-8c80-4edb34a61afd",
+		"name": "Тестовое задание",
+		"description": "[https://github.com/Gontafi/auth/new/main](https://github.com/Gontafi/auth/new/main)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29697650"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"a221ee36-f12e-4482-9334-41bdd30cff1a\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjM4MDYzMDIsImlhdCI6MTcyMzgwNDUwMiwic3ViIjoiYTIyMWVlMzYtZjEyZS00NDgyLTkzMzQtNDFiZGQzMGNmZjFhIiwidWlwIjoiWzo6MV06MzkwODQifQ.MbGerYppPWeNZmbCAALoMI4KgfAwDjbDCJA11qfcOII6nfMNGW4-DKdS6wGpll79jMJ4ixS7iaLN0yH80fMzsg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":\"a221ee36-f12e-4482-9334-41bdd30cff1a\",\n    \"refresh_token\":\"HpGnPFFUzM4qn660_opYIhILZfRt0FJgsx7r4tnonBT4QyzsohQm0CIndw1T66BXEjY=\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/refresh",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
