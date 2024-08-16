@@ -99,7 +99,6 @@ func (h Handler) MiddlewareOne(next http.Handler) http.Handler {
 		})
 
 		if err != nil {
-			log.Println(err)
 			w.WriteHeader(http.StatusUnauthorized)
 			_, err := w.Write([]byte("You're Unauthorized due to error parsing the JWT"))
 			if err != nil {

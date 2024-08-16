@@ -3,8 +3,8 @@ package utils
 import (
 	"crypto/rand"
 	"encoding/base64"
-	"log"
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
@@ -52,6 +52,7 @@ func ReadUserIP(r *http.Request) string {
 	if IPAddress == "" {
 		IPAddress = r.RemoteAddr
 	}
-	log.Println(IPAddress)
-	return IPAddress
+	parts := strings.Split(IPAddress, ":")
+
+	return parts[0]
 }
